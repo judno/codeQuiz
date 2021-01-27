@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body>
+    <div class="hide" id="timer">Time:</div>
+
+    <div class="quizIntro content" id="intro">
+      <h1>Click Start to start Quiz</h1>
+      <div>
+        <button type="button" class="btn" id="start">start quiz</button>
+      </div>
+    </div>
+
+    <div class="hide content" id="questions">
+      <h1></h1>
+      <button type="button" id="b1" class="btn btn-primary">answer</button>
+      <button type="button" id="b2" class="btn btn-primary">answer</button>
+      <button type="button" id="b3" class="btn btn-primary">answer</button>
+      <button type="button" id="b4" class="btn btn-primary">answer</button>
+    </div>
+    <div class="hide content" id="finish">
+      <h1>You Finished with a score of <span id="score"></span></h1>
+      <div class="name">enter your name</div>
+      <input class="input" type="text" id="scorename" />
+      <button class="btn" id="saveScore">save</button>
+    </div>
+    <div class="hide content" id="highscores">
+      <h1>Highscores</h1>
+      <button class="btn" id="clear">clear scores</button>
+      <button class="btn" id="back">go back</button>
+      <ul id="scoreList"></ul>
+      <li class="li"></li>
+    </div>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
