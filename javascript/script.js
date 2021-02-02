@@ -1,14 +1,32 @@
 //global scope
 let quiz = [
   {
-    question: "What colour is green?",
-    answers: ["Blue", "Green"],
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: ["script", "scripting", "js", "java"],
+    correctAnswerIndex: 0,
+  },
+  {
+    question: "What is the correct syntax for referring to an external script?",
+    answers: ["script name= ''", "script src=''", "script href=''"],
     correctAnswerIndex: 1,
   },
   {
-    question: "what colour is not green?",
-    answers: ["Blue", "green"],
+    question: "How do you create a function in JavaScript?",
+    answers: [
+      "function myfunction()",
+      "function=myfunction",
+      "function:myfunction",
+    ],
     correctAnswerIndex: 0,
+  },
+  {
+    question: "How do you call a function named myfunction?",
+    answers: [
+      "call myfunction()",
+      "callfunction myfunction()",
+      ":myfunction()",
+    ],
+    correctAnswerIndex: 2,
   },
 ];
 // sets parameters of the quizz
@@ -49,7 +67,7 @@ let theQuestions = document.querySelector("#questions");
 let theIntro = document.querySelector("#intro");
 
 function renderQuestion(questionIndex) {
-  //clear question content of div
+  //clear question content from div
   theQuestions.innerHTML = "";
 
   let currentQuestion = quiz[questionIndex];
@@ -59,9 +77,6 @@ function renderQuestion(questionIndex) {
   //set contents
   questionElement.innerHTML = currentQuestion.question;
   theQuestions.appendChild(questionElement);
-
-  // set the contents
-  // append to #questions element
 
   //populate answers to DOM
   currentQuestion.answers.forEach(function (answer, answerIndex) {
@@ -91,12 +106,11 @@ function checkAnswer(event) {
     correctAnswers++;
   } else {
     console.log("incorrect");
-    // TODO: Decrement time remaining
+    // decrement time remaining
     quizLength = quizLength - 5000;
   }
   console.log(correctAnswers);
   if (currentQuestionIndex >= quiz.length - 1) {
-    console.log("fuck off");
     finishQuiz();
   } else {
     nextQuestion();
@@ -179,7 +193,7 @@ function showHighscoreScreen() {
     renderedScore.innerHTML = highScore.name + highScore.score;
     scoreList.appendChild(renderedScore);
     //to do go back button
-    // veiw highscores nav button
+    // veiw highscores button
   }
   function clearStorage() {
     localStorage.clear();

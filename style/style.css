@@ -50,14 +50,18 @@ h2 {
 .input {
   margin: auto;
 }
-.li {
+#scoreList {
   text-align: center;
   padding: 20px;
   font-size: 25px;
   font-family: sans-serif;
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: whitesmoke;
+  flex-direction: column;
+  background-color: rgba(2, 53, 2, 0.644);
 }
 
 .hide {
